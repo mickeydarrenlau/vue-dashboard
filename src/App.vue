@@ -1,5 +1,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="style.css"><script setup>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="style" href="/src/style.css" />
+<script setup>
 import { ref } from 'vue'
 const items = ref([{ name1: 'Foo', image1: "https://rv.darren.ee.eu.org/thumbs/bluemap.jpg", url1:"https://rv.darren.ee.eu.org/bluemapcreative/", name2: 'Homeassistant', image2: "https://rv.darren.ee.eu.org/thumbs/homeassistant.jpg", url2:"https://hass.darrenmc.ee.eu.org"}])
 </script>
