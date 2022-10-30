@@ -1,5 +1,5 @@
 FROM owncloudci/nodejs:latest
-RUN cp -r / /app
+RUN ls
 WORKDIR /app
 RUN npm install 
 CMD npm run serve
