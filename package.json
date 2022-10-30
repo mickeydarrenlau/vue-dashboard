@@ -2,8 +2,8 @@
   "name": "vite-vue-starter",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --host",
+    "build": "vite build --host",
     "serve": "vite preview --host"
   },
   "dependencies": {
