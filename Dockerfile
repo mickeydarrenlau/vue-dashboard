@@ -4,4 +4,4 @@ RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
 RUN npm install 
-CMD npm run build
+CMD npm run dev
