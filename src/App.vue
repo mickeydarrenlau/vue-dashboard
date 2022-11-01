@@ -2,8 +2,8 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="style" href="/src/style.css" />
 <script setup>
-import { ref } from 'vue'
-const items = ref([{ name1: 'Bluemap Creative', image1: "https://rv.darren.ee.eu.org/thumbs/bluemap.jpg", url1:"https://rv.darren.ee.eu.org/bluemapcreative/", name2: 'Homeassistant', image2: "https://rv.darren.ee.eu.org/thumbs/homeassistant.jpg", url2:"https://hass.darrenmc.ee.eu.org"}])
+import { inject } from 'vue'
+const items = inject('list_items')
 </script>
 
 <template>
