@@ -1,10 +1,16 @@
-FROM owncloudci/nodejs:latest
+FROM node:latest AS builder
+
 WORKDIR /
-RUN mkdir /app
-COPY ./ /app
+COPY . /app
 WORKDIR /app
-RUN npm install && npm run build
-WORKDIR /app/dist
+RUN npm install
+RUN npm run build
+
+FROM node:latest
+
+WORKDIR /web
+COPY --from=builder /app/dist /web/
+
+EXPOSE 3000
+
 CMD npx http-server . -p 3000
-
-
