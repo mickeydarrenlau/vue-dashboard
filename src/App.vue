@@ -8,7 +8,7 @@ const items = inject('list_items')
 
 <template>
 	<table class="links">
-	  <div v-for="(item, index) in items">
+	  <div v-for="(item) in items">
 	  <div>
       <div v-if="item.url1 && item.name1 && item.image1" id="box" style="display: table-cell;" ><a :href="item.url1"><div class="box"><img :src="item.image1" alt="" height="70" width="70"/><div class="txt">{{ item.name1 }}</div></div></a></div>
        <div v-if="item.url2 && item.name2 && item.image2" id="box" style="display: table-cell;" ><a :href="item.url2"><div class="box"><img :src="item.image2" alt="" height="70" width="70"/><div class="txt">{{ item.name2 }}</div></div></a></div>
