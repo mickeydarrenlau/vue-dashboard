@@ -15,6 +15,7 @@ async function makeRequest(url) {
   }
 }
 const d = await makeRequest(props.url)
+alert(d)
 const status = ref(d)
 </script>
 <template>
