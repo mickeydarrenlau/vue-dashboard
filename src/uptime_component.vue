@@ -6,7 +6,7 @@ import { ref, onMounted } from 'vue'
 const props = defineProps(['url'])
 async function makeRequest(url) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {mode: 'no-cors'});
 
     return response.status;
 
