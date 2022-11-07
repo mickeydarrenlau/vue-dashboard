@@ -15,6 +15,9 @@ async function makeRequest() {
 }
 
 </script>
+<template>
+<span>&#183;</span>
+</template>
 
 
 
