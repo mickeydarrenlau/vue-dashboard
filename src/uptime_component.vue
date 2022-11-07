@@ -18,8 +18,8 @@ const d = await makeRequest(props.url)
 const status = ref(d)
 </script>
 <template>
-<span style="color: green;" v-if="status == 200">&#183;</span>
-<span style="color: red;" v-else>&#183;</span>
+<span style="color: DarkGreen;" v-if="status == 200">&#183;</span>
+<span style="color: DarkRed;" v-else>&#183;</span>
 
 </template>
 
