@@ -2,10 +2,11 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="style" href="/src/style.css" />
 <script setup>
+import { ref, onMounted } from 'vue'
 const props = defineProps(['url'])
-async function makeRequest() {
+async function makeRequest(url) {
   try {
-    const response = await fetch('https://randomuser.me/api/');
+    const response = await fetch(url);
 
     return response.status;
 
@@ -13,10 +14,12 @@ async function makeRequest() {
     return err;
   }
 }
-
+const status = ref(makeRequest(props.url))
 </script>
 <template>
-<span>&#183;</span>
+<span style="colour: red" v-if="status == 200">&#183;</span>
+<span style="colour: red" v-else>&#183;</span>
+
 </template>
 
 
