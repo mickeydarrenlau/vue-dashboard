@@ -15,6 +15,7 @@ async function makeRequest(url) {
   }
 }
 const status = ref(makeRequest(props.url))
+alert(status)
 </script>
 <template>
 <span style="color: green;" v-if="status == 200">&#183;</span>
