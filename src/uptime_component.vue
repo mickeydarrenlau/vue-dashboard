@@ -19,8 +19,8 @@ alert(d)
 const status = ref(d)
 </script>
 <template>
-<span style="color: DarkGreen;" v-if="status == 200">&#183;</span>
-<span style="color: DarkRed;" v-else>&#183;</span>
+<a style="color: green;" v-if="status == 200">&#183;</a>
+<a style="color: red;" v-else>&#183;</a>
 
 </template>
 
