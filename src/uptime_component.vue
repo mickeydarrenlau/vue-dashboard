@@ -14,8 +14,7 @@ async function makeRequest(url) {
     return err;
   }
 }
-const d = await makeRequest(props.url)
-alert(d)
+const d = makeRequest(props.url)
 const status = ref(d)
 </script>
 <template>
