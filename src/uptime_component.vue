@@ -19,7 +19,7 @@ const status = ref(d)
 </script>
 <template>
 <a style="color: green;" v-if="status == 200">&#183;</a>
-<a style="color: red;" v-else>&#183;</a>
+<v-else a style="color: red;">&#183;</a>
 
 </template>
 
