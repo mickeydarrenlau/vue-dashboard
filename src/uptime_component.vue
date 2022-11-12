@@ -5,14 +5,17 @@
 import { ref, onMounted } from 'vue'
 const props = defineProps(['url'])
 async function makeRequest(url) {
-  try {
-    const response = await fetch(url, {mode: 'no-cors'});
-
-    return response.status;
-
-  } catch (err) {
-    return err;
-  }
+  fetch(url, {mode: 'no-cors'}).then(response => {
+      status = response.status
+      console.log('response.status: ', status); // 👉️ 200
+      return status
+      
+    })
+    .catch(err => {
+      console.log(err);
+      return err
+    });
+}
 }
 const d = makeRequest(props.url)
 const status = ref(d)
