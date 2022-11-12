@@ -13,4 +13,4 @@ COPY --from=builder /app/dist /web/
 
 EXPOSE 3000
 
-CMD npx http-server . -p 3000
+CMD npx --yes http-server . -p 3000
