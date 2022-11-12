@@ -23,7 +23,7 @@ const status = ref(d)
 <template>
 <a style="color: green;" v-if="status == 200">&#183;</a>
 <a v-else style="color: red;">&#183;</a>
-
+<div class="txt">{{ status }}</div>
 </template>
 
 
