@@ -16,7 +16,6 @@ async function makeRequest(url) {
       return err
     });
 }
-}
 const d = makeRequest(props.url)
 const status = ref(d)
 </script>
