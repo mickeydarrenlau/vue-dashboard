@@ -1,29 +1,26 @@
-<link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="style" href="/src/style.css" />
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+window.se = undefined
+let status = ref(window.se)
 const props = defineProps(['url'])
-async function makeRequest(url) {
-  fetch(url, {mode: 'no-cors'}).then(response => {
-      status = response.status
-      console.log('response.status: ', status); // 👉️ 200
-      return status
-      
-    })
-    .catch(err => {
-      console.log(err);
-      return err
-    });
+setInterval(function() {
+function makeRequest(url) {
+  fetch("https://api.codetabs.com/v1/proxy?quest=" + url).then(ss => {
+      window.sl = ss.status
+
+  })
+  return window.sl
+  
 }
-const d = makeRequest(props.url)
-const status = ref(d)
+
+window.se = makeRequest(props.url)
+status.value = window.se
+},2000)
 </script>
 <template>
-<a style="color: green;" v-if="status == 200">&#183;</a>
-<a v-else style="color: red;">&#183;</a>
-<div class="txt">{{ status }}</div>
+<span style="color: green; font-size: 15px;" v-if="status == '200'">&#11044;  </span>
+<span v-else style="color: red; font-size: 15px;">&#11044;  </span>
+<div class="text" style="font-size: 15px; display: inline-block;">{{ status }}</div>
 </template>
-
-
-

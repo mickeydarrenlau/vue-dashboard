@@ -53,6 +53,9 @@ td {
 
 .txt {
 	margin: 40px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-family: 'Poor Story', cursive; src: url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 }
 
 a {
