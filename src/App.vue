@@ -1,7 +1,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="style" href="/src/style.css" />
-<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+
 <script setup>
 import { ref, inject } from 'vue'
 import uptime from "./uptime_component.vue"
