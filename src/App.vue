@@ -29,9 +29,10 @@ const noti = ref([])
           <div v-if="item.url5 && item.name5 && item.image5" id="box" style="display: table-cell;" ><a :href="item.url5"><div class="box"><img :src="item.image5" alt="" height="70" width="70"/><div class="txt">{{ item.name5 }} <br> <uptime :url="item.urls5"></uptime></div></div></a></div>
           </div>
 	  </div>
+        
         <div class="txt">Notifications</div>
         <div v-for="(c) in noti">
-          <div  id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/><div class="txt"> {{ c.message }} </div></div></div>
+          <div  id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/><div class="txt"> {{ c.messages }} </div></div></div>
         </div>
 
 </template>
