@@ -1,14 +1,25 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="style" href="/src/style.css" />
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
 <script setup>
 import { inject } from 'vue'
 import uptime from "./uptime_component.vue"
 const items = inject('list_items')
+// Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('d617bc28d908c6454cbb', {
+      cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('services');
+    channel.bind('notification', function(data) {
+      alert(JSON.stringify(data));
+    });
 </script>
 
 <template>
-	<table class="links">
 	  <div v-for="(item) in items">
 	  <div>
       <div v-if="item.url1 && item.name1 && item.image1" id="box" style="display: table-cell;" ><a :href="item.url1"><div class="box"><img :src="item.image1" alt="" height="70" width="70"/><div class="txt">{{ item.name1 }} <br> <uptime :url="item.urls1"></uptime> </div></div></a></div>
@@ -18,5 +29,5 @@ const items = inject('list_items')
           <div v-if="item.url5 && item.name5 && item.image5" id="box" style="display: table-cell;" ><a :href="item.url5"><div class="box"><img :src="item.image5" alt="" height="70" width="70"/><div class="txt">{{ item.name5 }} <br> <uptime :url="item.urls5"></uptime></div></div></a></div>
           </div>
 	  </div>
-	</table>
+
 </template>
