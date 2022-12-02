@@ -20,7 +20,7 @@ const noti = ref([])
 </script>
 
 <template>
-	  <div style="margin: auto; width: 50%;" v-for="(item) in items">
+	  <div style="width: 100px; height: 100px; position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto;" v-for="(item) in items">
 	  <div>
       <div v-if="item.url1 && item.name1 && item.image1" id="box" style="display: table-cell;" ><a :href="item.url1"><div class="box"><img :src="item.image1" alt="" height="70" width="70"/><div class="txt">{{ item.name1 }} <br> <uptime :url="item.urls1"></uptime> </div></div></a></div>
        <div v-if="item.url2 && item.name2 && item.image2" id="box" style="display: table-cell;" ><a :href="item.url2"><div class="box"><img :src="item.image2" alt="" height="70" width="70"/><div class="txt">{{ item.name2 }} <br> <uptime :url="item.urls2"></uptime></div></div></a></div>
