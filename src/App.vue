@@ -3,9 +3,10 @@
 <link rel="style" href="/src/style.css" />
 <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
 <script setup>
-import { inject } from 'vue'
+import { ref, inject } from 'vue'
 import uptime from "./uptime_component.vue"
 const items = inject('list_items')
+const noti = ref([])
 // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
@@ -15,7 +16,7 @@ const items = inject('list_items')
 
     var channel = pusher.subscribe('services');
     channel.bind('notification', function(data) {
-      alert(JSON.stringify(data));
+      noti.value.push(JSON.stringify(data));
     });
 </script>
 
@@ -29,5 +30,8 @@ const items = inject('list_items')
           <div v-if="item.url5 && item.name5 && item.image5" id="box" style="display: table-cell;" ><a :href="item.url5"><div class="box"><img :src="item.image5" alt="" height="70" width="70"/><div class="txt">{{ item.name5 }} <br> <uptime :url="item.urls5"></uptime></div></div></a></div>
           </div>
 	  </div>
+        <div class="txt">Notifications</div>
+        <div v-for="(c) in noti">
+          <div  id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/><div class="txt">{{ c.message }} <br></div></div></a></div>
 
 </template>
