@@ -24,7 +24,7 @@ const notin = ref(0)
 <template>
 <div class="txt">Notifications</div>
         <div v-for="(c) in noti">
-          <div :onclick="c.command" height="200" width="200" id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/> <br> <div height="80" width="80" class="txt"> {{ c.message }} </div> </div></div>
+          <div onclick=alert(c.real) height="200" width="200" id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/> <br> <div height="80" width="80" class="txt"> {{ c.message }} </div> </div></div>
           <br>
         </div>
 </template>
