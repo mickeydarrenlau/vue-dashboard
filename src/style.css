@@ -31,7 +31,7 @@ body {
 	right: 0;
 }
 
-table {
+.links {
 	border-spacing:40px 20px;
 	margin: 0;
 	position: absolute;
