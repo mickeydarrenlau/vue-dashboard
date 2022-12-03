@@ -11,7 +11,7 @@ const noti = ref([])
 
     var channel = pusher.subscribe('services');
     channel.bind('notification', function(data) {
-      if(len(data.message) > 21) {
+      if(data.message.length > 21) {
          data.message = "Message too long"
       }
       noti.value = [data].concat(noti.value);
