@@ -4,6 +4,7 @@
 <script setup>
 import { ref } from 'vue'
 const noti = ref([])
+const notin = ref(0)
 
     var pusher = new Pusher('d617bc28d908c6454cbb', {
       cluster: 'ap1'
@@ -14,7 +15,8 @@ const noti = ref([])
       if(data.message.length > 21) {
          data.message = "Message too long"
       }
-      noti.value = [data].concat(noti.value);
+      noti.ref.value = notin.value + 1
+      noti.value = [{"id": notin.value, data}].concat(noti.value);
     });
 </script>
 
