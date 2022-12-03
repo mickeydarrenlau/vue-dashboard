@@ -12,7 +12,7 @@ const notin = ref(0)
 
     var channel = pusher.subscribe('services');
     channel.bind('notification', function(data) {
-      real = data.message
+      let real = data.message
       if(data.message.length > 21) {
          data.message = "Message too long"
       }
