@@ -17,7 +17,7 @@ const notin = ref(0)
          data.message = "Message too long"
       }
       notin.value = notin.value + 1
-      noti.value = [{"id": notin.value, data, "real": real, "command": "alert(c.real)"}].concat(noti.value);
+      noti.value = [{"id": notin.value, "real": real, "command": "alert(c.real)"}.concat(data)].concat(noti.value);
     });
 </script>
 
