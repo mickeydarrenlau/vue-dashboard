@@ -20,7 +20,7 @@ const noti = ref([])
 <template>
 <div class="txt">Notifications</div>
         <div v-for="(c) in noti">
-          <div  id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/><div class="txt"> {{ c.message }} </div></div></div>
-          <br></br>
+          <div id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/><div class="txt"> {{ c.message }} </div></div></div>
+          <br>
         </div>
 </template>
