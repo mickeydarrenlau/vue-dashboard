@@ -16,7 +16,7 @@ const notin = ref(0)
       if(data.message.length > 21) {
          data.message = "Message too long"
       }
-      noti.ref.value = notin.value + 1
+      notin.value = notin.value + 1
       noti.value = [{"id": notin.value, data, "real": real, "command": "alert(c.real)"}].concat(noti.value);
     });
 </script>
