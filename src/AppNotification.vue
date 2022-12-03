@@ -12,18 +12,19 @@ const notin = ref(0)
 
     var channel = pusher.subscribe('services');
     channel.bind('notification', function(data) {
+      real = data.message
       if(data.message.length > 21) {
          data.message = "Message too long"
       }
       noti.ref.value = notin.value + 1
-      noti.value = [{"id": notin.value, data}].concat(noti.value);
+      noti.value = [{"id": notin.value, data, "real": real, "command": "alert(c.real)"}].concat(noti.value);
     });
 </script>
 
 <template>
 <div class="txt">Notifications</div>
         <div v-for="(c) in noti">
-          <div height="200" width="200" id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/> <br> <div height="80" width="80" class="txt"> {{ c.message }} </div> </div></div>
+          <div height="200" width="200" id="box" style="display: table-cell;" ><div class="box"><img :src="c.image" alt="" height="70" width="70"/> <br> <div height="80" width="80" class="txt" :onclick="c.command"> {{ c.message }} </div> </div></div>
           <br>
         </div>
 </template>
