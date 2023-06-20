@@ -54,6 +54,9 @@ jobs:
     - run: npm test
     - run: mkdir ./_site
     - run: mv ./dist/ ./_site
+    - name: Upload artifact
+
+      uses: actions/upload-pages-artifact@v1
     
     
     # Deployment job
