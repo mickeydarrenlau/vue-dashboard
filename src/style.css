@@ -7,7 +7,7 @@ body {
 	text-decoration: none;
 	display: inline-block;
 	height: 100px;
-	width: 300px;
+	width: 200px;
 	border-radius: 8px;
 	background: linear-gradient(to right, #202020, #404040);
 	overflow: hidden;
