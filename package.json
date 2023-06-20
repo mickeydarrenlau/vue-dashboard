@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "serve": "vite preview --host"
+    "serve": "vite preview --host",
+    "test": "echo hello"
   },
   "dependencies": {
     "vue": "^3.2.0"
