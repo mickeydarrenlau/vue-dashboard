@@ -52,6 +52,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: mkdir ./_site
+    - run: mv ./dest/* ./_site
     
     
     # Deployment job
